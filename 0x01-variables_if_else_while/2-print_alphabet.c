@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Prints the alphabet.
  *
@@ -6,11 +7,12 @@
  */
 int main(void)
 {
-	char c;
+	char alp[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int i;
 
-	for (c = 'a'; c <='z'; c++)
+	for (i = 0; i < 52; i++)
 	{
-		putchar[c];
+		putchar(alp[i]);
 	}
 	putchar('\n');
 	return (0);

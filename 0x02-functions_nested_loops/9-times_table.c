@@ -24,12 +24,12 @@ void times_table(void)
 			{
 				_putchar('0');
 			}
-			else if (product >= 10)
+			else if (tbs >= 10)
 			{
 				_putchar((tbs / 10) + '0');
 				_putchar((tbs % 10) + '0');
 			}
-			else if ((tbs < 10) && (y != 0))
+			else if ((tbs < 10) && (j != 0))
 			{
 				_putchar(' ');
 				_putchar((tbs % 10) + '0');

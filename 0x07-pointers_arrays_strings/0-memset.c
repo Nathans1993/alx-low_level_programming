@@ -1,19 +1,18 @@
 #include "Holberton.h"
-#include <stdio.h>
-
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the momery to print
- *
- * Return: Nothing.
+ * _memset - fills memory with a constant byte,
+ * @s: memory area.
+ * @b: constant bytes
+ * @n: bytes filled.
+ * Return: the pointer to dest.
  */
 void char *_memset(char *s, char b, unsigned int n)
 {
-	int i;
+	unsigned int i;
+
 	for(i=0; i<n; i++)
-	{
 		*(s + i) = b;
-	}
+
+
 	return (s);
 }

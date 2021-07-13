@@ -1,22 +1,15 @@
-#include "holberton.h"
 #include <stdio.h>
-
 /**
- * main - Prints the number of arguments passed into it
- *@argc: count of arguments
- *@argv: array of pointers to the strings passed
- * Return: Always 0.
+ * main - prints all arguments it receives.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-
 int main(int argc, char *argv[])
 {
 	int i;
 
 	for (i = 0; i < argc; i++)
-	{
 		printf("%s\n", argv[i]);
-	}
 	return (0);
 }
-~
-~

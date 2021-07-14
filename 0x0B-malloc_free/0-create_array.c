@@ -1,19 +1,27 @@
-#include "notrebloh.h"
-#include <stdio.h>
+#include "holberton.h"
 #include <stdlib.h>
-#include <limits.h>
-
 /**
- * *malloc_checked - allocate memory with malloc
- * @b: unsigned int type
- * Return: return pointer
+ * create_array - creates an array of chars.
+ * @size: size of the array.
+ * @c: storaged char
+ *
+ * Return: pointer of an array of chars
  */
-void *malloc_checked(unsigned int b)
+char *create_array(unsigned int size, char c)
 {
-	int *ptr;
+	char *cr;
+	unsigned int i;
 
-	ptr = malloc(b);
-	if (ptr == NULL)
-		exit(98);
-	return (ptr);
+	if (size == 0)
+		return (NULL);
+
+	cr = malloc(sizeof(c) * size);
+
+	if (cr == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+		cr[i] = c;
+
+	return (cr);
 }

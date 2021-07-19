@@ -1,4 +1,5 @@
 #0x0E. C - Structures, typedef
+
 Requirements
 General
 Allowed editors: vi, vim, emacs

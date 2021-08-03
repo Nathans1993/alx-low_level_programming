@@ -1,44 +1,51 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - Deletes a node at a certain index
- * @head: pointer to head of node
- * @index: Index of the node
- * Return: Always 0.
+ * insert_nodeint_at_index - inserts a new node
+ * at a given position.
+ * @head: head of a list.
+ * @idx: index of the list where the new node is
+ * added.
+ * @n: integer element.
+ *
+ * Return: the address of the new node, or NULL if it
+ * failed.
  */
-
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *old, *next;
 	unsigned int i;
+	listint_t *new;
+	listint_t *h;
 
-	if (*head == NULL || head == NULL)
-		return (-1);
-	next = *head;
+	h = *head;
 
-	if (index == 0)
+	if (idx != 0)
 	{
-		old = next->next;
-		free(next);
-		*head = old;
-		return (1);
+		for (i = 0; i < idx - 1 && h != NULL; i++)
+		{
+			h = h->next;
+		}
 	}
-	for (i = 0; i < index; i++)
+
+	if (h == NULL && idx != 0)
+		return (NULL);
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->n = n;
+
+	if (idx == 0)
 	{
-		if (next == NULL)
-			return (-1);
-		old = next;
-		next = next->next;
+		new->next = *head;
+		*head = new;
 	}
-	old->next = next->next;
-	free(next);
-	if (index == 0)
+	else
 	{
-		head = &old;
-		return (1);
+		new->next = h->next;
+		h->next = new;
 	}
-	return (i);
+
+	return (new);
 }
